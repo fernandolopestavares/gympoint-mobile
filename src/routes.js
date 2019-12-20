@@ -1,9 +1,13 @@
 import React from 'react';
+import { Image } from 'react-native';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import logo from '~/assets/logo-hor.png';
+
+import Header from '~/components/Header';
 
 import SignIn from '~/pages/SignIn';
 
@@ -34,6 +38,12 @@ export default (signed = false) =>
                       <Icon name="check" size={20} color={tintColor} />
                     ),
                   },
+                  defaultNavigationOptions: {
+                    headerBackground: <Header />,
+                    headerBackImage: () => (
+                      <Icon name="chevron-left" size={20} color="#000" />
+                    ),
+                  },
                 }
               ),
             },
@@ -49,6 +59,12 @@ export default (signed = false) =>
                     tabBarLabel: 'Pedir ajuda',
                     tabBarIcon: ({ tintColor }) => (
                       <Icon name="live-help" size={20} color={tintColor} />
+                    ),
+                  },
+                  defaultNavigationOptions: {
+                    headerBackground: <Header />,
+                    headerBackImage: () => (
+                      <Icon name="chevron-left" size={20} color="#000" />
                     ),
                   },
                 }
