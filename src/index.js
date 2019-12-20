@@ -1,9 +1,19 @@
 import React from 'react';
+import { StatusBar } from 'react-native';
+import { Provider } from 'react-redux';
 
-import Routes from './routes';
+import '~/config/ReactotronConfig';
+import App from './App';
+
+import store from '~/store';
 
 // import { Container } from './styles';
 
-export default function App() {
-  return <Routes />;
+export default function Index() {
+  return (
+    <Provider store={store}>
+      <StatusBar barStyle="dark-content" backgroundColor="#fff" />
+      <App />
+    </Provider>
+  );
 }
