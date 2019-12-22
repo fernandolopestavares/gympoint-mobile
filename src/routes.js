@@ -1,11 +1,9 @@
 import React from 'react';
-import { Image } from 'react-native';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import logo from '~/assets/logo-hor.png';
 
 import Header from '~/components/Header';
 
@@ -35,13 +33,13 @@ export default (signed = false) =>
                   navigationOptions: {
                     tabBarLabel: 'CheckIns',
                     tabBarIcon: ({ tintColor }) => (
-                      <Icon name="check" size={20} color={tintColor} />
+                      <Icon name="edit-location" size={20} color={tintColor} />
                     ),
                   },
                   defaultNavigationOptions: {
                     headerBackground: <Header />,
                     headerBackImage: () => (
-                      <Icon name="chevron-left" size={20} color="#000" />
+                      <Icon name="chevron-left" size={22} color="#000" />
                     ),
                   },
                 }
@@ -64,7 +62,7 @@ export default (signed = false) =>
                   defaultNavigationOptions: {
                     headerBackground: <Header />,
                     headerBackImage: () => (
-                      <Icon name="chevron-left" size={20} color="#000" />
+                      <Icon name="chevron-left" size={22} color="#000" />
                     ),
                   },
                 }
@@ -79,7 +77,7 @@ export default (signed = false) =>
               inactiveTintColor: '#000',
               style: {
                 backgroundColor: '#fff',
-                borderTopColor: 'transparent',
+                borderTopColor: 'rgba(0, 0, 0, 0.2)',
               },
             },
           }

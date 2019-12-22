@@ -1,15 +1,91 @@
-import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { formatRelative, parseISO } from 'date-fns';
+import pt from 'date-fns/locale/pt';
+import { useSelector } from 'react-redux';
+import { withNavigationFocus } from 'react-navigation';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import api from '~/services/api';
 
-// import { Container } from './styles';
+import {
+  Container,
+  NewRequestButton,
+  RequestList,
+  Request,
+  RequestInfo,
+  Text,
+  RequestHeader,
+  RequestHeaderContent,
+  RequestDate,
+  Question,
+} from './styles';
+
 import Background from '~/components/Background';
 
-export default function Requests({ navigation }) {
+function Requests({ navigation, isFocused }) {
+  const studentId = useSelector(state => state.auth.id);
+  const [helpOrders, setHelpOrders] = useState([]);
+
+  async function getHelpOrders() {
+    const response = await api.get(`help-orders/students`, {
+      params: { id: studentId },
+    });
+
+    const data = response.data.map(request => ({
+      ...request,
+      created_at: formatRelative(parseISO(request.createdAt), new Date(), {
+        locale: pt,
+      }),
+    }));
+
+    setHelpOrders(data);
+  }
+
+  useEffect(() => {
+    if (isFocused) {
+      getHelpOrders();
+    }
+  }, [isFocused]); //eslint-disable-line
+
+  function handleNavigate(item) {
+    navigation.navigate('Details', { item });
+  }
+
   return (
     <Background>
-      <TouchableOpacity onPress={() => navigation.navigate('NewRequest')}>
-        <Text>Clique</Text>
-      </TouchableOpacity>
+      <Container>
+        <NewRequestButton onPress={() => navigation.navigate('NewRequest')}>
+          Novo pedido de auxílio
+        </NewRequestButton>
+
+        <RequestList
+          data={helpOrders}
+          keyExtractor={item => String(item.id)}
+          renderItem={({ item }) => (
+            <Request onPress={() => handleNavigate(item)}>
+              <RequestHeader>
+                <RequestHeaderContent>
+                  {item.answer ? (
+                    <RequestInfo>
+                      <Icon name="check-circle" size={13} color="#42cb59" />
+                      <Text answer>Respondido</Text>
+                    </RequestInfo>
+                  ) : (
+                    <RequestInfo>
+                      <Icon name="check-circle" size={13} color="#999999" />
+                      <Text>Sem Resposta</Text>
+                    </RequestInfo>
+                  )}
+                </RequestHeaderContent>
+                <RequestDate>{item.created_at}</RequestDate>
+              </RequestHeader>
+
+              <Question>{item.question}</Question>
+            </Request>
+          )}
+        />
+      </Container>
     </Background>
   );
 }
+
+export default withNavigationFocus(Requests);
