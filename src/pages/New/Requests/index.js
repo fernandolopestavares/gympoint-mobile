@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Alert } from 'react-native';
 import { formatRelative, parseISO } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 import { useSelector } from 'react-redux';
@@ -26,18 +27,21 @@ function Requests({ navigation, isFocused }) {
   const [helpOrders, setHelpOrders] = useState([]);
 
   async function getHelpOrders() {
-    const response = await api.get(`help-orders/students`, {
-      params: { id: studentId },
-    });
+    try {
+      const response = await api.get(`help-orders/students`, {
+        params: { id: studentId },
+      });
 
-    const data = response.data.map(request => ({
-      ...request,
-      created_at: formatRelative(parseISO(request.createdAt), new Date(), {
-        locale: pt,
-      }),
-    }));
-
-    setHelpOrders(data);
+      const data = response.data.map(request => ({
+        ...request,
+        created_at: formatRelative(parseISO(request.createdAt), new Date(), {
+          locale: pt,
+        }),
+      }));
+      setHelpOrders(data);
+    } catch (err) {
+      Alert.alert('Ops', `${err.response.data.error}`);
+    }
   }
 
   useEffect(() => {

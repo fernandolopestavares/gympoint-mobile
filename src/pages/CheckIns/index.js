@@ -23,20 +23,24 @@ function CheckIns({ isFocused }) {
   const studentId = useSelector(state => state.auth.id);
 
   async function getCheckIns() {
-    const response = await api.get(`/students/${studentId}/checkins`);
+    try {
+      const response = await api.get(`/students/${studentId}/checkins`);
 
-    const data = response.data.rows.map(check => ({
-      id: check.id,
-      created_at: formatRelative(parseISO(check.created_at), new Date(), {
-        locale: pt,
-      }),
-    }));
+      const data = response.data.rows.map(check => ({
+        id: check.id,
+        created_at: formatRelative(parseISO(check.created_at), new Date(), {
+          locale: pt,
+        }),
+      }));
 
-    const totalCheckIns = response.data.count;
+      const totalCheckIns = response.data.count;
 
-    setTotalCheck(totalCheckIns);
+      setTotalCheck(totalCheckIns);
 
-    setCheckIns(data);
+      setCheckIns(data);
+    } catch (err) {
+      Alert.alert('Ops', `${err.response.data.error}`);
+    }
   }
 
   useEffect(() => {
