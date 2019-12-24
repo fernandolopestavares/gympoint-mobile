@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { formatRelative, parseISO } from 'date-fns';
-import pt from 'date-fns/locale/pt';
+import pt from 'date-fns/locale/pt-BR';
 
 import {
   Container,

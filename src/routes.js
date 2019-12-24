@@ -8,7 +8,6 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import Header from '~/components/Header';
 
 import SignIn from '~/pages/SignIn';
-import SignOut from '~/pages/SignOut';
 
 import CheckIns from '~/pages/CheckIns';
 

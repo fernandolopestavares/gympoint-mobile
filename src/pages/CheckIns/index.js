@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Alert } from 'react-native';
 import { withNavigationFocus } from 'react-navigation';
 import { formatRelative, parseISO } from 'date-fns';
-import pt from 'date-fns/locale/pt';
+import pt from 'date-fns/locale/pt-BR';
 import { useSelector } from 'react-redux';
 import api from '~/services/api';
 

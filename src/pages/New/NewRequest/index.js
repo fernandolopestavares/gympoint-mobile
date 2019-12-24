@@ -30,6 +30,7 @@ export default function NewRequest({ navigation }) {
       <Container>
         <Text
           multiline
+          autoFocus
           value={question}
           onChangeText={setQuestion}
           placeholder="Inclua seu pedido de auxílio"
