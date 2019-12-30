@@ -25,7 +25,8 @@
   ```
   npm install
   yarn
-    ```
+  
+  ```
 </p>
 
 <p align="justify">
