@@ -8,8 +8,6 @@ import App from './App';
 
 import { store, persistor } from '~/store';
 
-// import { Container } from './styles';
-
 export default function Index() {
   return (
     <Provider store={store}>
