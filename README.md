@@ -8,6 +8,8 @@
 
 <hr/>
 
+
+
 <p align="center">
   Aplicativo desenvolvido no treinamento aplicado pela Rocketseat, denominado GoStack, este app faz parte do projeto de desafio
   final do GoStack, no desenvolvimento do Gympoint, um gerenciador de academias.
@@ -19,11 +21,26 @@
   <strong>Ambiente de desenvolvimento</strong>
 </p>
 
+<p align="center">
+  O aplicativo foi desenvolvido utilizando React Native,e é importante ressaltar que
+  o aplicativo foi testado durante o desenvolvimento apenas no ambiente ANDROID devido a limitações de hardware.
+</p>
 
 <p align="center">
-  O aplicativo foi desenvolvido utilizando React Native, react-navigations e outras mais ferramentas do ecossistema, importante ressaltar que
-  o aplicativo foi testado durante o desenvolvimento no sistema Android apena devido a limitações de hardware.
+  <strong>Ferramentas</strong>
 </p>
+
+<p align="center">
+  Durante o processo de desenvolvimento vários conceitos foram colocados em prática, pondendo citar alguns deles como:
+</p>
+
+<p align="center">- Padronização de código utilizando Eslint / Prettier</p>
+<p align="center">- Componentização (Tanto na aplicação web, quanto mobile)</p>
+<p align="center">- Utilização de React Hooks, diminuindo a verbosidade</p>
+<p align="center">- Utilização de React Redux, que neste caso foi um exemplo mais simples, apenas para trabalhar com a informação do usuário logado</p>
+<p align="center">- Configuração e utilização do react-navigation</p>
+
+
 
 <p align="center">
   <strong>Representaçao do aplicativo</strong>
@@ -31,13 +48,13 @@
 
 
 <p align="center" backgroundColor="#eee">
-  <img src="https://user-images.githubusercontent.com/54908803/71584460-6b114400-2af1-11ea-9931-08a2d7386117.png" height="480" />
-  <img src="https://user-images.githubusercontent.com/54908803/71584073-de19bb00-2aef-11ea-89eb-fd4b0b3535b9.png" height="480" />
-  <img src="https://user-images.githubusercontent.com/54908803/71584477-78c6c980-2af1-11ea-90b8-bb6e00050d03.png" height="480" />
+  <img src="https://user-images.githubusercontent.com/54908803/71584460-6b114400-2af1-11ea-9931-08a2d7386117.png" height="450" />
+  <img src="https://user-images.githubusercontent.com/54908803/71584073-de19bb00-2aef-11ea-89eb-fd4b0b3535b9.png" height="450" />
+  <img src="https://user-images.githubusercontent.com/54908803/71584477-78c6c980-2af1-11ea-90b8-bb6e00050d03.png" height="450" />
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/54908803/71584097-f1c52180-2aef-11ea-9f9b-9f8dfdd4c7c8.png" height="480" />
-   <img src="https://user-images.githubusercontent.com/54908803/71584116-073a4b80-2af0-11ea-858a-c469523becc4.png" height="480" />
-  <img src="https://user-images.githubusercontent.com/54908803/71584125-115c4a00-2af0-11ea-975d-9fe4c9a9d964.png" height="480" />
+  <img src="https://user-images.githubusercontent.com/54908803/71584097-f1c52180-2aef-11ea-9f9b-9f8dfdd4c7c8.png" height="450" />
+   <img src="https://user-images.githubusercontent.com/54908803/71584116-073a4b80-2af0-11ea-858a-c469523becc4.png" height="450" />
+  <img src="https://user-images.githubusercontent.com/54908803/71584125-115c4a00-2af0-11ea-975d-9fe4c9a9d964.png" height="450" />
 </p>
