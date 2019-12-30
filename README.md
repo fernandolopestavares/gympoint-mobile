@@ -23,11 +23,9 @@
   Execute um dos comandos abaixo
   
   ```
-  
   npm install
   yarn
-  
-  ```
+    ```
 </p>
 
 <p align="justify">
