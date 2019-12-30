@@ -9,12 +9,51 @@
 <hr/>
 
 
-
 <p align="center">
   Aplicativo desenvolvido no treinamento aplicado pela Rocketseat, denominado GoStack, este app faz parte do projeto de desafio
   final do GoStack, no desenvolvimento do Gympoint, um gerenciador de academias.
   O app representa a visão do cliente, no caso, o aluno da academia, onde pode realizar os seus check-ins, limitados a 5 checkins a
   cada 7 dias e também abrir pedidos de ajuda que serão respondidos pelos profissionais da academia através da versão web da aplicação.
+</p>
+
+<h1 align="center">Instruções</h1>
+<p align="center">
+  Em caso de download do projeto você precisará baixar as dependências: <br>
+  Necessário: Yarn ou Npm instalados<br>
+  Execute um dos comandos abaixo
+  
+  ```
+  
+  npm install
+  yarn
+  
+  ```
+</p>
+
+<p align="justify">
+Você também precisará do react-native-cli e de um emulador configurado, você pode configurar o Genymotion, ou o AndroidStudio, a Rocketseat possui um tutorial de configuração através do seguinte link: https://docs.rocketseat.dev/ambiente-react-native/android/linux
+  
+  Para instalação da CLI do react-native você deve executar o comando abaixo:
+  
+  ```
+  yarn add @react-native-community/cli
+  npm install @react-native-community/cli
+  ```
+  
+  Você  também pode consultar a documentação através de https://github.com/react-native-community/cli
+  
+  Com o seu emulador configurado e ja aberto, execute o seguinte comando que ira garantir a build do app:
+  
+  ```
+  react-native run-android
+  ```
+  
+  Depois do processo finalizado, execute:
+  
+  ```
+  react-native start
+  ```
+  
 </p>
 
 <p align="center">
